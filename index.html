@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Yogesh E - Resume</title>
+
+
+    <style>
+
+        /* ================= BASIC ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e5e7eb;
+            color: #222;
+            line-height: 1.35;
+        }
+
+
+        /* ================= A4 PAGE ================= */
+
+        .resume {
+
+            width: 210mm;
+            height: 297mm;
+
+            margin: 20px auto;
+
+            background: white;
+
+            padding: 22px 32px;
+
+            box-shadow:
+                0 0 12px rgba(0, 0, 0, 0.15);
+
+            overflow: hidden;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .header {
+
+            text-align: center;
+
+            border-bottom: 1.5px solid #222;
+
+            padding-bottom: 8px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .header h1 {
+
+            font-size: 26px;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 2px;
+        }
+
+
+        /* PROFILE IMAGE */
+
+        .profile-image {
+
+            width: 75px;
+            height: 75px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+
+            margin: 5px auto 5px;
+
+            border: 2px solid #222;
+        }
+
+
+        .header h2 {
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+            color: #444;
+
+            margin-bottom: 5px;
+        }
+
+
+        .contact {
+
+            font-size: 10.5px;
+
+            color: #333;
+
+            line-height: 1.5;
+        }
+
+
+        .contact span {
+
+            margin: 0 3px;
+        }
+
+
+        .contact a {
+
+            color: #222;
+
+            text-decoration: none;
+        }
+
+
+        /* ================= SECTIONS ================= */
+
+        .section {
+
+            margin-bottom: 9px;
+        }
+
+
+        .section-title {
+
+            font-size: 12.5px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.8px;
+
+            border-bottom: 1px solid #555;
+
+            padding-bottom: 2px;
+
+            margin-bottom: 5px;
+
+            font-weight: bold;
+        }
+
+
+        .section p {
+
+            font-size: 10.5px;
+
+            text-align: justify;
+
+            line-height: 1.4;
+        }
+
+
+        /* ================= CAREER OBJECTIVE ================= */
+
+        .objective {
+
+            font-size: 10.5px;
+
+            text-align: justify;
+
+            line-height: 1.4;
+        }
+
+
+        /* ================= EDUCATION ================= */
+
+        .education-item {
+
+            margin-bottom: 3px;
+        }
+
+
+        .education-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-weight: bold;
+
+            font-size: 11px;
+        }
+
+
+        .education-sub {
+
+            font-size: 10px;
+
+            color: #444;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            column-gap: 35px;
+
+            row-gap: 3px;
+
+            font-size: 10.5px;
+        }
+
+
+        .skill-item strong {
+
+            color: #111;
+        }
+
+
+        /* ================= PROJECTS ================= */
+
+        .project {
+
+            margin-bottom: 7px;
+        }
+
+
+        .project-title {
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            margin-bottom: 1px;
+        }
+
+
+        .project-tech {
+
+            font-size: 9.5px;
+
+            font-style: italic;
+
+            color: #555;
+
+            margin-bottom: 2px;
+        }
+
+
+        .project ul {
+
+            margin-left: 15px;
+
+            font-size: 9.8px;
+
+            line-height: 1.3;
+        }
+
+
+        .project li {
+
+            margin-bottom: 1px;
+        }
+
+
+        /* ================= TWO COLUMN ================= */
+
+        .two-column {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+
+        /* ================= LIST ================= */
+
+        .certifications {
+
+            margin-left: 15px;
+
+            font-size: 10px;
+
+            line-height: 1.35;
+        }
+
+
+        .certifications li {
+
+            margin-bottom: 2px;
+        }
+
+
+        /* ================= BOTTOM ================= */
+
+        .bottom-section {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+
+        /* ================= PRINT ================= */
+
+        @media print {
+
+            body {
+
+                background: white;
+            }
+
+
+            .resume {
+
+                width: 210mm;
+
+                height: 297mm;
+
+                margin: 0;
+
+                padding: 22px 32px;
+
+                box-shadow: none;
+
+                overflow: hidden;
+            }
+
+
+            @page {
+
+                size: A4;
+
+                margin: 0;
+            }
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media screen and (max-width: 800px) {
+
+            body {
+
+                background: white;
+            }
+
+
+            .resume {
+
+                width: 100%;
+
+                height: auto;
+
+                min-height: 100vh;
+
+                margin: 0;
+
+                padding: 20px;
+
+                box-shadow: none;
+
+                overflow: visible;
+            }
+
+
+            .skills,
+            .two-column,
+            .bottom-section {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .education-header {
+
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="resume">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <h1>YOGESH E</h1>
+
+
+        <img
+            src="IMG_3180.JPG"
+            alt="Profile Image"
+            class="profile-image"
+        >
+
+
+        <h2>
+            B.E. Computer Science and Engineering Student
+        </h2>
+
+
+        <div class="contact">
+
+            <span>📍 Tamil Nadu, India</span>
+
+            <span>|</span>
+
+            <span>📞 +91 XXXXXXXXXX</span>
+
+            <span>|</span>
+
+            <span>✉️ eyogesh68@gmail.com</span>
+
+            <br>
+
+            <span>
+                🔗
+                <a href="#" target="_blank">
+                    LinkedIn
+                </a>
+            </span>
+
+            <span>|</span>
+
+            <span>
+                💻
+                <a href="#" target="_blank">
+                    GitHub
+                </a>
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= CAREER OBJECTIVE ================= -->
+
+    <section class="section">
+
+        <h3 class="section-title">
+            Career Objective
+        </h3>
+
+
+        <p class="objective">
+
+            Motivated and enthusiastic Computer Science Engineering
+            student with an interest in Software Development,
+            Web Development, Artificial Intelligence and Machine
+            Learning. Looking for opportunities to apply technical
+            knowledge, improve problem-solving skills and contribute
+            to real-world software projects while continuously
+            learning new technologies.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section class="section">
+
+        <h3 class="section-title">
+            Education
+        </h3>
+
+
+        <div class="education-item">
+
+            <div class="education-header">
+
+                <span>
+                    Bachelor of Engineering (B.E.)
+                </span>
+
+                <span>
+                    2025 – 2029
+                </span>
+
+            </div>
+
+
+            <div class="education-sub">
+
+                Computer Science and Engineering
+
+            </div>
+
+
+            <div class="education-sub">
+
+                Currently pursuing 2nd Year
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= TECHNICAL SKILLS ================= -->
+
+    <section class="section">
+
+        <h3 class="section-title">
+            Technical Skills
+        </h3>
+
+
+        <div class="skills">
+
+
+            <div class="skill-item">
+
+                <strong>Programming:</strong>
+                Python, Java
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <strong>Web Development:</strong>
+                HTML, CSS, JavaScript
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <strong>Database:</strong>
+                SQL
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <strong>Data Science:</strong>
+                Pandas, Matplotlib
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <strong>Machine Learning:</strong>
+                Basic ML Concepts
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <strong>Tools:</strong>
+                Git, GitHub
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <strong>Core Concepts:</strong>
+                Data Structures, OOP
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <strong>Other:</strong>
+                Problem Solving
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section class="section">
+
+        <h3 class="section-title">
+            Academic & Personal Projects
+        </h3>
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <div class="project-title">
+
+                1. BusTrack AI – Smart Bus Tracking & Booking System
+
+            </div>
+
+
+            <div class="project-tech">
+
+                Technologies: HTML, CSS, JavaScript, AI, Supabase
+
+            </div>
+
+
+            <ul>
+
+                <li>
+                    Developed a smart bus tracking and booking
+                    application designed to help passengers find
+                    buses, timings and travel information.
+                </li>
+
+                <li>
+                    Designed features for bus search, passenger
+                    booking, live tracking and travel assistance.
+                </li>
+
+                <li>
+                    Planned database and authentication integration
+                    for storing real transport information.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <div class="project-title">
+
+                2. Data Cleaning & Visualization
+
+            </div>
+
+
+            <div class="project-tech">
+
+                Technologies: Python, Pandas, Matplotlib
+
+            </div>
+
+
+            <ul>
+
+                <li>
+                    Developed a data analysis project focused on
+                    cleaning and preparing datasets.
+                </li>
+
+                <li>
+                    Created meaningful visualizations to understand
+                    patterns and trends in data.
+                </li>
+
+                <li>
+                    Applied Python libraries for data processing
+                    and exploratory analysis.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <div class="project-title">
+
+                3. BenchBridge – Smart Project Upskilling Platform
+
+            </div>
+
+
+            <div class="project-tech">
+
+                Technologies: HTML, CSS, JavaScript
+
+            </div>
+
+
+            <ul>
+
+                <li>
+                    Designed a platform for employee upskilling and
+                    smart project matching.
+                </li>
+
+                <li>
+                    Created assessment, resource matching,
+                    profile and status tracking features.
+                </li>
+
+                <li>
+                    Developed the frontend using HTML5, CSS3 and
+                    Vanilla JavaScript.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CERTIFICATIONS + STRENGTHS ================= -->
+
+    <div class="two-column">
+
+
+        <!-- CERTIFICATIONS -->
+
+        <section class="section">
+
+            <h3 class="section-title">
+                Certifications
+            </h3>
+
+
+            <ul class="certifications">
+
+                <li>
+                    Introduction to Cloud Computing – Coursera
+                </li>
+
+                <li>
+                    Data Analysis / Visualization Projects
+                </li>
+
+                <li>
+                    AI / Machine Learning Learning Projects
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- STRENGTHS -->
+
+        <section class="section">
+
+            <h3 class="section-title">
+                Strengths
+            </h3>
+
+
+            <ul class="certifications">
+
+                <li>
+                    Problem Solving
+                </li>
+
+                <li>
+                    Quick Learning
+                </li>
+
+                <li>
+                    Team Collaboration
+                </li>
+
+                <li>
+                    Logical Thinking
+                </li>
+
+                <li>
+                    Interest in Emerging Technologies
+                </li>
+
+            </ul>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- ================= INTERESTS ================= -->
+
+    <section class="section">
+
+        <h3 class="section-title">
+            Interests
+        </h3>
+
+
+        <p>
+
+            Software Development • Artificial Intelligence •
+            Machine Learning • Web Development • Data Science •
+            Football
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= DECLARATION ================= -->
+
+    <section class="section">
+
+        <h3 class="section-title">
+            Declaration
+        </h3>
+
+
+        <p>
+
+            I hereby declare that the information provided above
+            is true and correct to the best of my knowledge.
+
+        </p>
+
+    </section>
+
+
+</div>
+
+
+</body>
+
+</html>
